@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>blizzlike.org</title>
+
+    <link rel="stylesheet" href="./css/blizzlike.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+
+    <script src="./js/config.js"></script>
+    <script src="./js/generic.js"></script>
+    <script src="./js/core/client.js"></script>
+    <script src="./js/ui.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <header>
+        <div id="header">
+          <h1>blizzlike</h1>
+          <h2>continued gaming</h2>
+          <ul id="menu">
+            <li><a href="/">home</a></li>
+            <li><a href="#">how to</a></li>
+            <li><a href="#">stats</a></li>
+          </ul>
+        </div>
+      </header>
+      <div id="content">
+        <table id="realms">
+          <tr>
+            <th>name</th>
+            <th>mode</th>
+            <th>population</th>
+            <th>state</th>
+          </tr>
+        </table>
+      </div>
+      <div id="footer">
+        <form onsubmit="return ui_signup(this);">
+          <p><input type="text" name="username" placeholder="Username" /> <input type="text" name="email" placeholder="Email" /></p>
+        <p><input type="password" name="password" placeholder="Password" /> <input type="password" name="repeat" placeholder="Repeat" /></p>
+        <p><input type="submit" value="signup" /></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url('../img/background.png');
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+div.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+div#header {
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+div#header h1 {
+  margin: 0;
+  padding: 0;
+  color: #f05408;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 112px;
+}
+
+div#header h2 {
+  margin: 0;
+  padding: 0;
+  color: #f1d4af;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 34px;
+}
+
+div#header ul#menu {
+  margin: 25px 0 0;
+  padding: 0 150px;
+  list-style: none;
+  border-top: 1px solid #f1d4af;
+  border-bottom: 1px solid #f1d4af;
+  background: rgba(241, 212, 175, 0.5);
+}
+
+div#header ul#menu li {
+  display: inline;
+  padding: 0 20px 0 15px;
+  border-left: 1px solid #f1d4af;
+  font-size: 25px;
+  color: #000000;
+}
+
+div#header ul#menu li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+div#content {
+  flex: 0 1 auto;
+  padding: 50px 150px;
+  background: #f1d4af;
+}
+
+div#content h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+}
+
+div#content table#realms {
+  margin: 0 0 25px;
+  border-style: hidden;
+  width: 100%;
+}
+
+div#content table th {
+  padding: 5px;
+  border: 1px solid #663333;
+  background: #000000;
+  color: #f1d4af;
+  text-align: left;
+}
+
+div#content table td {
+  padding: 5px;
+  border: 1px solid #663333;
+}
+
+div#content table td.green {
+  background: #5c755e;
+}
+
+div#content table td.red {
+  background: #663333;
+  color: #f1d4af;
+}
+
+div#footer {
+  flex: 1 1 auto;
+  background: rgba(241, 212, 175, 0.5);
+  text-align: center;
+}
+
+div#footer form input {
+  background: #f1d4af;
+  border: 2px solid #f1d4af;
+}
+
+div#footer form input:focus {
+  outline: none;
+}
+
+div#footer form input.error {
+  border: 2px solid #d87e70;
+  background: #d87e70;
+}
+
+div#register p.msg {
+  color: #f05408;
+  text-shadow: 1px 1px #000000;
+}
