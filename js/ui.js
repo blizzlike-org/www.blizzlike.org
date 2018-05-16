@@ -63,7 +63,7 @@ function ui_signup(form)
       var p = document.createElement('p');
       p.id = 'signup_msg';
       p.classList.add('msg');
-      p.innerHTML = 'thank you for signing up.';
+      p.innerHTML = 'Your Account has been created. Thank you for signing up.';
       form.parentNode.insertBefore(p, form);
       setTimeout(function() {
         var p = document.getElementById('signup_msg');

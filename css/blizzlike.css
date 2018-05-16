@@ -6,8 +6,13 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: url('../img/background.png');
-  font-family: 'Ropa Sans', sans-serif;
+  background-color: #222222;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  font-family: 'Roboto';
+  font-size: 13pt;
 }
 
 div.box {
@@ -16,114 +21,198 @@ div.box {
   height: 100%;
 }
 
+/* Page Header */
 div#header {
   flex: 0 1 auto;
   margin: 0;
   padding: 0;
   width: 100%;
+  text-align: center;
 }
 
 div#header h1 {
   margin: 0;
-  padding: 0;
-  color: #f05408;
-  text-align: center;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 112px;
+  padding:24px 0px 0px 0px;
+  color: #ffffff;
+  text-shadow: 0px 0px 5px #000000;
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 56px;
 }
 
 div#header h2 {
   margin: 0;
   padding: 0;
-  color: #f1d4af;
+  color: #cccccc;
+  text-shadow: 0px 0px 5px #000000;
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 27px;
+}
+
+/* Menu Bar */
+div#menubar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   text-align: center;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 34px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
 }
 
-div#header ul#menu {
-  margin: 25px 0 0;
-  padding: 0 150px;
+div#menubar ul#menu {
+  text-align: left;
+  margin: 0px 0 0;
+  padding: 10px 150px;
   list-style: none;
-  border-top: 1px solid #f1d4af;
-  border-bottom: 1px solid #f1d4af;
-  background: rgba(241, 212, 175, 0.5);
+  border-bottom: 1px solid #444444;
+  background: #000000;
+  height: 15px;
 }
 
-div#header ul#menu li {
+div#menubar ul#menu li {
   display: inline;
-  padding: 0 20px 0 15px;
-  border-left: 1px solid #f1d4af;
-  font-size: 25px;
-  color: #000000;
+  font-size: 10pt;
+  font-weight: 300;
+  margin: 0px;
+  float: left;
 }
 
-div#header ul#menu li a {
-  color: #000000;
+div#menubar ul#menu li#login {
+  float: right;
+}
+
+div#menubar ul#menu li a {
+  padding: 10px;
+  border-left: 1px solid #222222;
+  border-right: 1px solid #222222;
+  color: #cccccc;
   text-decoration: none;
 }
 
+div#menubar ul#menu li a:hover {
+  border-left: 1px solid #444444;
+  border-right: 1px solid #444444;
+  border-bottom: 1px solid #222222;
+  background: #222222;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Realm List */
+span#realmlist {
+  font-family: 'Inconsolata';
+  display: inline-block;
+  padding: 10px 25px;
+  margin: 25px;
+  border: 1px #666666 solid;
+  border-radius: 5px;
+  background: rgba(50,50,50,.5);
+  color: #cccccc;
+  text-shadow: 0px 0px 1px #000000;
+}
+
+/* Main Content */
 div#content {
-  flex: 0 1 auto;
-  padding: 50px 150px;
-  background: #f1d4af;
+  flex: 1 1 auto;
+  padding: 20px 50px;
+  border-top: 1px #444444 solid;
+  background: rgba(0,0,0,.5);
+  text-align: center;
+  color: #ffffff;
+}
+
+div#content div#page {
+  margin: auto;
+  text-align: left;
+  width: 900px;
 }
 
 div#content h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 36px;
+  margin: 10;
+  padding: 10;
+  font-size: 22pt;
+  font-weight: 300;
 }
 
-div#content table#realms {
-  margin: 0 0 25px;
+div#content div.infobox {
+  border-left: 4px #666666 solid;
+  background: rgba(102, 102, 102, .25);
+  padding: 10px 20px;
+}
+
+/* Realm Status */
+table#realms {
+  margin: 50px auto;
   border-style: hidden;
-  width: 100%;
+  width: 500px;
+  font-size: 16px;
+  color: #ffffff;
 }
 
-div#content table th {
-  padding: 5px;
-  border: 1px solid #663333;
-  background: #000000;
-  color: #f1d4af;
-  text-align: left;
+table#realms th {
+  padding: 10px;
+  border: 0px solid #000000;
+  color: #ffffff;
+  text-shadow: 0px 0px 5px #000000;
+  font-size: 12pt;
+  font-weight: 100;
 }
 
-div#content table td {
-  padding: 5px;
-  border: 1px solid #663333;
+table#realms td {
+  font-weight: 300;
+  text-shadow: 0px 0px 5px #000000;
+  padding: 2px;
 }
 
-div#content table td.green {
-  background: #5c755e;
+table#realms td.green {
+  background: #336633;
 }
 
-div#content table td.red {
+table#realms td.red {
   background: #663333;
-  color: #f1d4af;
+  color: #ffffff;
 }
 
-div#footer {
-  flex: 1 1 auto;
-  background: rgba(241, 212, 175, 0.5);
-  text-align: center;
+/* Register Formular */
+form#gameacc input {
+  padding: 10px;
+  background: #222222;
+  border: 1px solid #666666;
+  color: #ffffff;
 }
 
-div#footer form input {
-  background: #f1d4af;
-  border: 2px solid #f1d4af;
-}
-
-div#footer form input:focus {
+form#gameacc input:focus {
   outline: none;
 }
 
-div#footer form input.error {
-  border: 2px solid #d87e70;
-  background: #d87e70;
+form#gameacc input.error {
+  border: 1px solid #aa4444;
+  background: #442222;
 }
 
-div#register p.msg {
-  color: #f05408;
-  text-shadow: 1px 1px #000000;
+p.msg {
+  display: block;
+  padding: 10px;
+  color: #ffffff;
+  border-left: 4px #446644 solid;
+  background: rgba(68, 102, 68, .25);
+  padding: 10px 20px;
+}
+
+/* Page Footer */
+div#footer {
+  flex: 0 0 auto;
+  background: rgba(0,0,0,1);
+  border-top: 1px #222222 solid;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+}
+
+div#footer a {
+  color: #cccccc;
+  text-decoration: none;
 }
