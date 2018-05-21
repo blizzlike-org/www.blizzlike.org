@@ -1,4 +1,4 @@
-function _ajax_call(endpoint, method, callback, data)
+function _ajax_call(endpoint, method, callback, data, creds)
 {
   var xhr = new XMLHttpRequest();
   var body = (data) ? JSON.stringify(data) : null;
@@ -16,8 +16,38 @@ function _ajax_call(endpoint, method, callback, data)
   }
 
   xhr.open(method, config.api.url + endpoint, true);
+  xhr.withCredentials = (creds != null);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(body);
+}
+
+function core_account_authenticate(data, callback)
+{
+  var validation = {
+    username: true,
+    password: true
+  }
+
+  var cb = function(status, data)
+  {
+    var success = (status == 200) ? true : false;
+    callback(success, data);
+  }
+
+  if(!data.username)
+    validation.username = false;
+
+  if(!data.password)
+    validation.password = false;
+
+  if(validation.username && validation.password)
+  {
+    _ajax_call('/v1/account/auth', 'POST', cb, data, true);
+  }
+  else
+  {
+    callback(false, validation);
+  }
 }
 
 function core_account_create(data, callback)
@@ -48,7 +78,7 @@ function core_account_create(data, callback)
       validation.password)
   {
     delete data.repeat;
-    _ajax_call('/v1/account', 'POST', cb, data);
+    _ajax_call('/v1/account', 'POST', cb, data, null);
   }
   else
   {
@@ -64,5 +94,5 @@ function core_realm_fetch(callback)
     callback(success, data);
   }
 
-  _ajax_call('/v1/realm', 'GET', cb, null);
+  _ajax_call('/v1/realm', 'GET', cb, null, null);
 }
