@@ -18,13 +18,14 @@ function ui_load_realms()
         td.innerHTML = d[i].name;
         tr.appendChild(td);
         td = document.createElement('td');
-        td.innerHTML = d[i].mode;
+        td.innerHTML = core_stdlib_resolve_mode(d[i].icon);
         tr.appendChild(td);
         td = document.createElement('td');
-        td.innerHTML = d[i].population;
-        if(d[i].population == 'low')
+        var population = core_stdlib_resolve_population(d[i].population);
+        td.innerHTML = population
+        if(population == 'low')
           td.classList.add('green');
-        if(d[i].population == 'high')
+        if(population == 'high')
           td.classList.add('red');
         tr.appendChild(td);
         td = document.createElement('td');
