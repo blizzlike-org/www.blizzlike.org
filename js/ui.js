@@ -28,11 +28,16 @@ function ui_load_realms()
           td.classList.add('red');
         tr.appendChild(td);
         td = document.createElement('td');
-        td.innerHTML = d[i].state;
-        if(d[i].state == 'new player' || d[i].state == 'recommended')
+        if(d[i].state == 1)
+        {
+          td.innerHTML = 'online';
           td.classList.add('green');
+        }
         else
+        {
+          td.innerHTML = 'offline';
           td.classList.add('red');
+        }
         tr.appendChild(td);
         realm_table.appendChild(tr);
       }
