@@ -20,12 +20,6 @@ function parsetime(seconds) {
   return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
-/* TODO
- *
- * Alliance Characters
- * Horde Characters
- */
-
 request.onload = function() {
   const api = request.response;
   populateRealmInfo(api);
