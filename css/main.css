@@ -1,0 +1,380 @@
+@font-face {
+  font-family: "LifeCraft";
+  src: url("../ttf/lifecraft.ttf");
+}
+
+textarea, select, input, button {
+  outline: none;
+}
+
+::placeholder {
+  font-weight: normal;
+  color: #cccccc;
+  opacity: 1;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #111111;
+  font-family: "Roboto";
+  font-weight: 100;
+  font-size: 16pt;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  line-height: 24pt;
+}
+
+a {
+  text-decoration: none;
+  color: #ffcc33;
+}
+
+li a {
+  text-decoration: none;
+  color: #ffcc33;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+}
+
+div.info {
+  background: rgba(255, 200, 20, .05);
+  color: #ffcc33;
+  border: 1px #ffcc33 solid;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div.centerpage {
+  margin: auto;
+  width: 95%;
+  max-width: 1600px;
+}
+
+div.linkanchor {
+  display: block;
+  position: relative;
+  top: -120px;
+  visibility: hidden;
+}
+
+div.topbarframe {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 1) 40%);
+}
+
+div.topbar {
+  padding: 30px;
+  overflow: auto;
+  margin: auto;
+  width: 95%;
+  max-width: 1600px;
+}
+
+span.topleft {
+  float: left;
+  font-size: 32pt;
+  font-family: "LifeCraft";
+}
+
+span.topright {
+  float: right;
+}
+
+span.topright a {
+  padding: 3px;
+  text-decoration: none;
+  font-size: 18pt;
+  color: #ffffff;
+}
+
+span.topright a:hover {
+  color: #ffcc33;
+}
+
+span.spacer {
+  margin: 5px;
+  border-left: 1px #cccccc solid;
+  border-image: radial-gradient(rgb(150, 150, 150), rgb(0, 0, 0)) 1;
+  font-size: 24pt;
+}
+
+div.content {
+  margin: 0px 0px 20px 0px;
+  padding: 100px;
+  border-radius: 5px;
+}
+
+div.content div.multicolumn {
+  display: inline-block;
+  width: 700px;
+  margin: 50px auto;
+  font-size: 16pt;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #000000;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  font-weight: 300;
+}
+
+#faq {
+  background: url("../img/faq.jpg");
+}
+
+#status {
+  background: url("../img/status.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#vanilla {
+  background: url("../img/vanilla.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#tbc {
+  background: url("../img/tbc.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#wotlk {
+  background: url("../img/wotlk.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#connect {
+  background: url("../img/connect.jpg");
+  background-size: cover;
+}
+
+div.content div.box {
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #000000;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+  text-shadow: 0px 0px 2px #000000;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+
+div.content div.fader {
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #000000;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 100px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+
+p span.quote {
+  padding-left: 15px;
+  margin-left: 5px;
+  border-left: 2px #aaaaaa solid;
+  font-size: 16pt;
+  font-weight: 100;
+  display: inline-block;
+}
+
+div.realmjs {
+  display: inline-block;
+  margin: 20px 10px;
+}
+
+div.realm-online {
+  border-left: 10px #55ff55 solid;
+}
+
+div.realm-offline {
+  border-left: 10px #ff5555 solid;
+}
+
+div.realminfo {
+  display: flex;
+  margin: 40px;
+}
+
+div.realminfo div {
+  height: 100%;
+  padding: 0px 25px;
+  margin: 0px 0px;
+}
+
+div.realminfo-overview {
+  width: 150px;
+}
+
+div.realminfo-stats {
+  width: 100px;
+}
+
+span.realminfo-realmname {
+  display: block;
+  font-size: 20pt;
+}
+
+span.realminfo-uptime {
+  font-size: 10pt;
+  color: #ffcc33;
+}
+
+span.realminfo-accounts {
+  display: block;
+  font-size: 10pt;
+  color: #ffcc33;
+}
+
+span.realminfo-characters {
+  display: block;
+  font-size: 10pt;
+  color: #ffcc33;
+}
+
+span.realminfo-online {
+  display: block;
+  font-size: 14pt;
+}
+
+span.realminfo-mode {
+  display: block;
+  font-size: 14pt;
+  margin-bottom: 5px;
+}
+
+div.realminfo-factions {
+  text-align: center;
+  font-size: 12pt;
+}
+
+div.realminfo-factions img {
+  margin: 0px 5px;
+  height: 14px;
+  width: 14px;
+}
+
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 5px;
+  margin: 50px 50px 25px 50px;
+  font-family: LifeCraft;
+  text-shadow: 0px 0px 2px #ffffff;
+  font-size: 24pt;
+  padding: 20px;
+  font-weight: 100;
+}
+
+a.button:hover {
+  color: #ffcc33;
+  box-shadow: 0px 0px 5px #ffcc33;
+  margin: 50px 50px 25px 50px;
+  text-shadow: 0px 0px 2px #ffcc33;
+  font-weight: 100;
+}
+
+a.realminfo-connect {
+  display: block;
+}
+
+div.setrealmlist {
+  font-size: 12pt;
+  font-family: Monospace;
+}
+
+div.footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px #252525 solid;
+}
+
+div.footer a {
+  padding: 25px;
+  text-decoration: none;
+  font-size: 18pt;
+  color: #cccccc;
+}
+
+div.footer a:hover {
+  color: #ffcc33;
+}
+
+form.register {
+  padding: 0px 10px;
+  border-radius: 5px;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+form.register input.text {
+  font-family: "Roboto";
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 14pt;
+  color: #ffffff;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, .25);
+  border: 1px rgba(255, 255, 255, .25) solid;
+  margin: 10px 0px;
+}
+
+form.register input.text:focus {
+  color: #ffcc33;
+  box-shadow: 0px 0px 5px #ffcc00;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px rgba(255, 200, 20, .75) solid;
+}
+
+form.register input.submit {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 5px;
+  margin: 5px auto;
+  font-family: LifeCraft;
+  text-shadow: 0px 0px 2px #ffffff;
+  font-size: 24pt;
+  padding: 10px;
+  font-weight: 100;
+  border: 0px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+form.register input.submit:hover {
+  color: #ffcc33;
+  box-shadow: 0px 0px 5px #ffcc33;
+  text-shadow: 0px 0px 2px #ffcc33;
+  font-weight: 100;
+}
