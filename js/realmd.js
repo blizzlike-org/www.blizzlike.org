@@ -33,7 +33,7 @@ request.onload = function() {
 
 function createRealm(data) {
   const frame = document.createElement('div')
-  if (data.check.state == 1) {
+  if (data.state == 1) {
     frame.className = "realminfo realm-online";
   } else {
     frame.className = "realminfo realm-offline";
@@ -50,7 +50,7 @@ function createRealm(data) {
   const uptime = document.createElement('span')
   uptime.className = "realminfo-uptime"
 
-  if (data.check.state == 1) {
+  if (data.state == 1) {
     var now = Math.round((new Date()).getTime() / 1000);
     var server = data.starttime
     uptime.textContent = parsetime(now - server)
