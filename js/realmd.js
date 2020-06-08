@@ -24,7 +24,6 @@ function parsetime(seconds) {
  *
  * Alliance Characters
  * Horde Characters
- * Players online
  */
 
 request.onload = function() {
@@ -110,7 +109,7 @@ function createRealm(data) {
 
   const online = document.createElement('span')
   online.className = "realminfo-online"
-  online.textContent = "9999 online"
+  online.textContent = (data.online ? data.online : "0") + " Online"
   stats.append(online)
 
   const characters = document.createElement('span')
