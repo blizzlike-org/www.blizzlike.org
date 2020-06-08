@@ -85,8 +85,13 @@ function createRealm(data) {
 
   factions.append(mode)
 
+  const maxplayers = data.alliance + data.horde
   const horde = document.createElement('span')
-  horde.textContent = "43%"
+  if (maxplayers > 0) {
+    horde.textContent = Math.round(data.horde / maxplayers * 100) + "%"
+  } else {
+    horde.textContent = "50%"
+  }
   factions.append(horde)
 
   const hordeicon = document.createElement('img')
@@ -100,7 +105,11 @@ function createRealm(data) {
   factions.append(allianceicon)
 
   const alliance = document.createElement('span')
-  alliance.textContent = "57%"
+  if (maxplayers > 0) {
+    alliance.textContent = Math.round(data.alliance / maxplayers * 100) + "%"
+  } else {
+    alliance.textContent = "50%"
+  }
   factions.append(alliance)
 
   /* right pane */
