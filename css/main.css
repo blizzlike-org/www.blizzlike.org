@@ -223,11 +223,11 @@ div.realminfo div {
   margin: 0px 0px;
 }
 
-div.realminfo-overview {
+div.realminfo-left {
   width: 150px;
 }
 
-div.realminfo-stats {
+div.realminfo-right {
   width: 100px;
 }
 
@@ -264,12 +264,12 @@ span.realminfo-mode {
   margin-bottom: 5px;
 }
 
-div.realminfo-factions {
+div.realminfo-center {
   text-align: center;
   font-size: 12pt;
 }
 
-div.realminfo-factions img {
+div.realminfo-center img {
   margin: 0px 5px;
   height: 14px;
   width: 14px;
