@@ -62,40 +62,26 @@ function createRealm(data, name) {
   frame.append(center)
   frame.append(right)
 
-  /* update all values once a second */
-  window.setInterval(function() {
-    const data = frame.data
-
-    /* update online state */
+  frame.updateContent = function(data) {
+    /* left pane */
+    realmname.textContent = data.name
     if (data.state == 1) {
       frame.className = "realminfo realm-online"
-      var now = Math.round((new Date()).getTime() / 1000)
-      var server = data.starttime
-      uptime.textContent = parsetime(now - server)
+      uptime.textContent = parsetime(Math.round((new Date()).getTime() / 1000) - data.starttime)
     } else {
       frame.className = "realminfo realm-offline"
       uptime.textContent = "Offline"
     }
 
-    realmname.textContent = data.name
-    online.textContent = (data.online ? data.online : "0") + " Online"
-
-    characters.textContent = (data.characters ? data.characters : "0") + " Characters"
-    accounts.textContent = (data.accounts ? data.accounts : "0") + " Accounts"
-
-    switch (data.icon) {
-      case 1:
-        mode.textContent = "PvP"
-        break
-      case 8:
-        mode.textContent = "RP-PvE"
-        break
-      case 8:
-        mode.textContent = "RP-PvP"
-        break
-      default:
-        mode.textContent = "PvE"
-        break
+    /* center pane */
+    if (data.icon == 1) {
+      mode.textContent = "PvP"
+    } else if (data.icon == 6) {
+      mode.textContent = "RP-PvE"
+    } else if (data.icon == 8) {
+      mode.textContent = "RP-PvP"
+    } else {
+      mode.textContent = "PvE"
     }
 
     const maxplayers = data.alliance + data.horde
@@ -106,7 +92,12 @@ function createRealm(data, name) {
       alliance.textContent = "50%"
       horde.textContent = "50%"
     }
-  }, 1000)
+
+    /* right pane */
+    online.textContent = (data.online ? data.online : "0") + " Online"
+    characters.textContent = (data.characters ? data.characters : "0") + " Characters"
+    accounts.textContent = (data.accounts ? data.accounts : "0") + " Accounts"
+  }
 
   return frame
 }
@@ -117,18 +108,18 @@ function updateRealmInfo(parent, data) {
     parent.append(parent[data.id])
   }
 
-  parent[data.id].data = data
+  parent[data.id].updateContent(data)
 }
 
 window.setInterval(function() {
   /* assign all realm info blocks to variables */
-  const overview = document.getElementById('realminfo-overview')
-  const vanilla = document.getElementById('realminfo-vanilla-stable')
-  const vanillaptr = document.getElementById('realminfo-vanilla-ptr')
-  const tbc = document.getElementById('realminfo-tbc-stable')
-  const tbcptr = document.getElementById('realminfo-tbc-ptr')
-  const wotlk = document.getElementById('realminfo-wotlk-stable')
-  const wotlkptr = document.getElementById('realminfo-wotlk-ptr')
+  let overview = document.getElementById('realminfo-overview')
+  let vanilla = document.getElementById('realminfo-vanilla-stable')
+  let vanillaptr = document.getElementById('realminfo-vanilla-ptr')
+  let tbc = document.getElementById('realminfo-tbc-stable')
+  let tbcptr = document.getElementById('realminfo-tbc-ptr')
+  let wotlk = document.getElementById('realminfo-wotlk-stable')
+  let wotlkptr = document.getElementById('realminfo-wotlk-ptr')
 
   /* access the blizzlike realm state API */
   let requestURL = 'https://api.beta.blizzlike.org/realmd/realmlist'
@@ -138,7 +129,6 @@ window.setInterval(function() {
   request.send()
   request.onload = function() {
     const data = request.response
-
     for (let i = 0; i < data.length; i++) {
       /* update overview */
       if (data[i].timezone != 26) {
