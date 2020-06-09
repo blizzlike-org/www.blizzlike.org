@@ -114,12 +114,12 @@ function updateRealmInfo(parent, data) {
 window.setInterval(function() {
   /* assign all realm info blocks to variables */
   let overview = document.getElementById('realminfo-overview')
-  let vanilla = document.getElementById('realminfo-vanilla-stable')
-  let vanillaptr = document.getElementById('realminfo-vanilla-ptr')
-  let tbc = document.getElementById('realminfo-tbc-stable')
-  let tbcptr = document.getElementById('realminfo-tbc-ptr')
-  let wotlk = document.getElementById('realminfo-wotlk-stable')
-  let wotlkptr = document.getElementById('realminfo-wotlk-ptr')
+  let vanilla = document.getElementById('realminfo-vanilla')
+  let vanillaptr = document.getElementById('realminfo-vanillaptr')
+  let tbc = document.getElementById('realminfo-tbc')
+  let tbcptr = document.getElementById('realminfo-tbcptr')
+  let wotlk = document.getElementById('realminfo-wotlk')
+  let wotlkptr = document.getElementById('realminfo-wotlkptr')
 
   /* access the blizzlike realm state API */
   let requestURL = 'https://api.beta.blizzlike.org/realmd/realmlist'
