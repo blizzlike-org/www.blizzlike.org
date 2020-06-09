@@ -103,24 +103,40 @@ function createRealm(data, name) {
 }
 
 function updateRealmInfo(parent, data) {
+  /* clear loading screen */
+  parent.loading.textContent = ""
+
+  /* create realm element */
   if (typeof parent[data.id] == "undefined") {
     parent[data.id] = createRealm(data)
     parent.append(parent[data.id])
   }
 
+  /* update its contents */
   parent[data.id].updateContent(data)
 }
 
-window.setInterval(function() {
-  /* assign all realm info blocks to variables */
-  let overview = document.getElementById('realminfo-overview')
-  let vanilla = document.getElementById('realminfo-vanilla')
-  let vanillaptr = document.getElementById('realminfo-vanillaptr')
-  let tbc = document.getElementById('realminfo-tbc')
-  let tbcptr = document.getElementById('realminfo-tbcptr')
-  let wotlk = document.getElementById('realminfo-wotlk')
-  let wotlkptr = document.getElementById('realminfo-wotlkptr')
+let display = {
+  overview: null,
+  vanilla: null,
+  vanillaptr: null,
+  tbc: null,
+  tbcptr: null,
+  wotlk: null,
+  wotlkptr: null
+}
 
+window.onload = function() {
+  /* assign all displays and provide loading text */
+  for (var name in display) {
+    display[name] = document.getElementById('realminfo-' + name)
+    display[name].loading = document.createElement('div')
+    display[name].loading.textContent = "Loading ..."
+    display[name].append(display[name].loading)
+  }
+}
+
+window.setInterval(function() {
   /* access the blizzlike realm state API */
   let requestURL = 'https://api.beta.blizzlike.org/realmd/realmlist'
   let request = new XMLHttpRequest()
@@ -132,33 +148,33 @@ window.setInterval(function() {
     for (let i = 0; i < data.length; i++) {
       /* update overview */
       if (data[i].timezone != 26) {
-        updateRealmInfo(overview, data[i])
+        updateRealmInfo(display.overview, data[i])
       }
 
       /* update vanilla section */
       if (data[i].realmbuilds.search("5875") != -1) {
         if (data[i].timezone == 26) {
-          updateRealmInfo(vanillaptr, data[i])
+          updateRealmInfo(display.vanillaptr, data[i])
         } else {
-          updateRealmInfo(vanilla, data[i])
+          updateRealmInfo(display.vanilla, data[i])
         }
       }
 
       /* update tbc section */
       if (data[i].realmbuilds.search("8606") != -1) {
         if (data[i].timezone == 26) {
-          updateRealmInfo(tbcptr, data[i])
+          updateRealmInfo(display.tbcptr, data[i])
         } else {
-          updateRealmInfo(tbc, data[i])
+          updateRealmInfo(display.tbc, data[i])
         }
       }
 
       /* update wotlk section */
       if (data[i].realmbuilds.search("12340") != -1) {
         if (data[i].timezone == 26) {
-          updateRealmInfo(wotlkptr, data[i])
+          updateRealmInfo(display.wotlkptr, data[i])
         } else {
-          updateRealmInfo(wotlk, data[i])
+          updateRealmInfo(display.wotlk, data[i])
         }
       }
     }
