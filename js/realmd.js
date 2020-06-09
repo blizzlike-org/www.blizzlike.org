@@ -126,7 +126,7 @@ let display = {
   wotlkptr: null
 }
 
-window.onload = function() {
+function populate() {
   /* assign all displays and provide loading text */
   for (var name in display) {
     display[name] = document.getElementById('realminfo-' + name)
@@ -135,6 +135,8 @@ window.onload = function() {
     display[name].append(display[name].loading)
   }
 }
+
+document.addEventListener("DOMContentLoaded", populate)
 
 window.setInterval(function() {
   /* access the blizzlike realm state API */
