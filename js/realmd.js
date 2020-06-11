@@ -5,11 +5,11 @@ function parsetime(seconds) {
   var m = Math.floor(seconds % 3600 / 60)
   var s = Math.floor(seconds % 60)
 
-  var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : ""
-  var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : ""
-  var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : ""
-  var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : ""
-  return dDisplay + hDisplay + mDisplay + sDisplay
+  d = d > 0 ? d + "d " : ""
+  h = h > 0 ? h + "h " : ""
+  m = m > 0 ? m + "m " : ""
+  s = s + "s"
+  return d + h + m + s
 }
 
 function createRealm(data, name) {
@@ -67,7 +67,7 @@ function createRealm(data, name) {
     realmname.textContent = data.name
     if (data.state == 1) {
       frame.className = "realminfo realm-online"
-      uptime.textContent = parsetime(Math.round((new Date()).getTime() / 1000) - data.starttime)
+      uptime.textContent = "Online: " + parsetime(Math.round((new Date()).getTime() / 1000) - data.starttime)
     } else {
       frame.className = "realminfo realm-offline"
       uptime.textContent = "Offline"

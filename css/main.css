@@ -136,10 +136,21 @@ div.content {
   border-radius: 5px;
 }
 
+div.content div.box {
+  padding: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #000000;
+  border-radius: 5px;
+  text-shadow: 0px 0px 2px #000000;
+  background: rgba(0, 0, 0, 0.75);
+}
+
 div.content div.multicolumn {
   display: inline-block;
-  width: 700px;
-  margin: 50px auto;
+  float: auto;
+  width: 500px;
+  margin: 5px auto;
   font-size: 16pt;
   color: #ffffff;
   box-shadow: 0px 0px 5px #000000;
@@ -149,25 +160,11 @@ div.content div.multicolumn {
   font-weight: 300;
 }
 
-div.content div.box {
-  font-weight: bold;
-  color: #ffffff;
-  box-shadow: 0px 0px 5px #000000;
-  border-radius: 5px;
-  margin: auto;
-  margin-top: 10px;
-  text-shadow: 0px 0px 2px #000000;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 20px;
-}
-
 div.content div.fader {
   font-weight: bold;
   color: #ffffff;
   box-shadow: 0px 0px 5px #000000;
   border-radius: 5px;
-  margin: auto;
-  margin-top: 100px;
   background: rgba(0, 0, 0, 0.75);
   padding: 20px;
 }
@@ -212,8 +209,8 @@ p span.quote {
 
 /* realmlist display */
 div.realmjs {
+  margin: 50px 25px 0px 25px;
   display: inline-block;
-  margin: 20px 10px;
 }
 
 div.realm-online {
@@ -225,27 +222,42 @@ div.realm-offline {
 }
 
 div.realminfo {
-  display: flex;
-  margin: 40px;
+  clear: both;
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
 }
 
 div.realminfo div {
-  height: 100%;
-  padding: 0px 25px;
-  margin: 0px 0px;
+  padding: 0px 20px;
+  margin: 0px;
 }
 
 div.realminfo-left {
+  display: inline-block;
+  text-align: left;
+  float: left;
   width: 150px;
 }
 
 div.realminfo-right {
+  display: inline-block;
+  text-align: right;
+  float: right;
   width: 100px;
+}
+
+div.realminfo-center {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  text-align: center;
+  font-size: 12pt;
 }
 
 span.realminfo-realmname {
   display: block;
-  font-size: 20pt;
+  font-size: 22pt;
 }
 
 span.realminfo-uptime {
@@ -273,12 +285,7 @@ span.realminfo-online {
 span.realminfo-mode {
   display: block;
   font-size: 14pt;
-  margin-bottom: 5px;
-}
-
-div.realminfo-center {
-  text-align: center;
-  font-size: 12pt;
+  margin-bottom: 10px;
 }
 
 div.realminfo-center img {
@@ -292,8 +299,9 @@ a.realminfo-connect {
 }
 
 div.setrealmlist {
-  font-size: 12pt;
+  font-size: 10pt;
   font-family: Monospace;
+  text-align: center;
 }
 
 /* registration */
