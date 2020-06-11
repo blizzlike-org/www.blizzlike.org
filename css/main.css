@@ -3,14 +3,8 @@
   src: url("../ttf/lifecraft.ttf");
 }
 
-textarea, select, input, button {
-  outline: none;
-}
-
-::placeholder {
-  font-weight: normal;
-  color: #cccccc;
-  opacity: 1;
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -23,10 +17,6 @@ html, body {
   color: #ffffff;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 p {
   line-height: 24pt;
 }
@@ -34,6 +24,10 @@ p {
 a {
   text-decoration: none;
   color: #ffcc33;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 li a {
@@ -46,6 +40,29 @@ li {
   margin: 5px;
 }
 
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 5px;
+  margin: 50px 50px 25px 50px;
+  font-family: LifeCraft;
+  text-shadow: 0px 0px 2px #ffffff;
+  font-size: 24pt;
+  padding: 20px;
+  font-weight: 100;
+}
+
+a.button:hover {
+  color: #ffcc33;
+  box-shadow: 0px 0px 5px #ffcc33;
+  margin: 50px 50px 25px 50px;
+  text-shadow: 0px 0px 2px #ffcc33;
+  font-weight: 100;
+}
+
 div.info {
   background: rgba(255, 200, 20, .05);
   color: #ffcc33;
@@ -54,23 +71,7 @@ div.info {
   border-radius: 5px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-div.centerpage {
-  margin: auto;
-  width: 95%;
-  max-width: 1600px;
-}
-
-div.linkanchor {
-  display: block;
-  position: relative;
-  top: -120px;
-  visibility: hidden;
-}
-
+/* navigation panel */
 div.topbarframe {
   width: 100%;
   position: fixed;
@@ -115,6 +116,20 @@ span.spacer {
   font-size: 24pt;
 }
 
+/* main content page */
+div.centerpage {
+  margin: auto;
+  width: 95%;
+  max-width: 1600px;
+}
+
+div.linkanchor {
+  display: block;
+  position: relative;
+  top: -120px;
+  visibility: hidden;
+}
+
 div.content {
   margin: 0px 0px 20px 0px;
   padding: 100px;
@@ -132,39 +147,6 @@ div.content div.multicolumn {
   background: rgba(0, 0, 0, 0.75);
   padding: 20px;
   font-weight: 300;
-}
-
-#faq {
-  background: url("../img/faq.jpg");
-}
-
-#status {
-  background: url("../img/status.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-#vanilla {
-  background: url("../img/vanilla.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-#tbc {
-  background: url("../img/tbc.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-#wotlk {
-  background: url("../img/wotlk.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-#connect {
-  background: url("../img/connect.jpg");
-  background-size: cover;
 }
 
 div.content div.box {
@@ -199,6 +181,36 @@ p span.quote {
   display: inline-block;
 }
 
+#faq {
+  background: url("../img/faq.jpg");
+}
+
+#status {
+  background: url("../img/status.jpg");
+  background-size: cover;
+}
+
+#vanilla {
+  background: url("../img/vanilla.jpg");
+  background-size: cover;
+}
+
+#tbc {
+  background: url("../img/tbc.jpg");
+  background-size: cover;
+}
+
+#wotlk {
+  background: url("../img/wotlk.jpg");
+  background-size: cover;
+}
+
+#connect {
+  background: url("../img/connect.jpg");
+  background-size: cover;
+}
+
+/* realmlist display */
 div.realmjs {
   display: inline-block;
   margin: 20px 10px;
@@ -275,29 +287,6 @@ div.realminfo-center img {
   width: 14px;
 }
 
-a.button {
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  color: #ffffff;
-  box-shadow: 0px 0px 5px #ffffff;
-  border-radius: 5px;
-  margin: 50px 50px 25px 50px;
-  font-family: LifeCraft;
-  text-shadow: 0px 0px 2px #ffffff;
-  font-size: 24pt;
-  padding: 20px;
-  font-weight: 100;
-}
-
-a.button:hover {
-  color: #ffcc33;
-  box-shadow: 0px 0px 5px #ffcc33;
-  margin: 50px 50px 25px 50px;
-  text-shadow: 0px 0px 2px #ffcc33;
-  font-weight: 100;
-}
-
 a.realminfo-connect {
   display: block;
 }
@@ -307,21 +296,15 @@ div.setrealmlist {
   font-family: Monospace;
 }
 
-div.footer {
-  text-align: center;
-  padding: 10px;
-  border-top: 1px #252525 solid;
+/* registration */
+textarea, select, input, button {
+  outline: none;
 }
 
-div.footer a {
-  padding: 25px;
-  text-decoration: none;
-  font-size: 18pt;
+::placeholder {
+  font-weight: normal;
   color: #cccccc;
-}
-
-div.footer a:hover {
-  color: #ffcc33;
+  opacity: 1;
 }
 
 form.register {
@@ -377,4 +360,22 @@ form.register input.submit:hover {
   box-shadow: 0px 0px 5px #ffcc33;
   text-shadow: 0px 0px 2px #ffcc33;
   font-weight: 100;
+}
+
+/* page footer */
+div.footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px #252525 solid;
+}
+
+div.footer a {
+  padding: 25px;
+  text-decoration: none;
+  font-size: 18pt;
+  color: #cccccc;
+}
+
+div.footer a:hover {
+  color: #ffcc33;
 }
