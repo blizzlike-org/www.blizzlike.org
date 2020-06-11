@@ -117,6 +117,10 @@ span.spacer {
 }
 
 /* main content page */
+div.topspace {
+  height: 120px;
+}
+
 div.centerpage {
   margin: auto;
   width: 95%;

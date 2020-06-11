@@ -1,0 +1,96 @@
+/* draw registration page as 100% width sized single columns */
+@media screen and (max-width: 1350px) {
+  div.content div.multicolumn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.realmjs {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  div.topspace {
+    height: 80px;
+  }
+
+  div.linkanchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+  }
+
+  div.content {
+    padding: 10px;
+  }
+
+  div.realminfo {
+    clear: both;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  /* split realminfo box */
+  div.realminfo-left {
+    float: left;
+  }
+
+  div.realminfo-center {
+    float: right;
+    text-align: right;
+  }
+
+  div.realminfo-right {
+    text-align: left;
+    float: left;
+  }
+
+  /* reduce font sizes */
+  html, body {
+    font-size: 14pt;
+  }
+
+  h1 {
+    font-size: 18pt;
+  }
+
+  div.content div.multicolumn {
+    font-size: 14pt;
+  }
+
+  p span.quote {
+    font-size: 14pt;
+  }
+
+  /* split top bar into two rows */
+  div.topbar {
+    padding: 5px;
+  }
+
+  span.topleft {
+    display: block;
+    float: none;
+  }
+
+  span.topright {
+    display: block;
+    float: none;
+  }
+
+  span.topright a {
+    padding: 0px;
+    text-decoration: none;
+    font-size: 12pt;
+    color: #ffffff;
+  }
+
+  span.spacer {
+    margin: 5px;
+    font-size: 14pt;
+  }
+}
