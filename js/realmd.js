@@ -1,3 +1,5 @@
+const url = 'https://api.blizzlike.org/realmd/realmlist'
+
 function parsetime(seconds) {
   seconds = Number(seconds)
   var d = Math.floor(seconds / (3600 * 24))
@@ -141,9 +143,8 @@ document.addEventListener("DOMContentLoaded", populate)
 
 window.setInterval(function() {
   /* access the blizzlike realm state API */
-  let requestURL = 'https://api.beta.blizzlike.org/realmd/realmlist'
   let request = new XMLHttpRequest()
-  request.open('GET', requestURL)
+  request.open('GET', url)
   request.responseType = 'json'
   request.send()
   request.onload = function() {
