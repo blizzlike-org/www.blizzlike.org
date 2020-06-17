@@ -237,6 +237,12 @@ div.realminfo div {
   margin: 0px;
 }
 
+div.realminfo-loading {
+  text-align: center;
+  font-size: 14pt;
+  padding: 15px;
+}
+
 div.realminfo-left {
   display: inline-block;
   text-align: left;

@@ -131,7 +131,8 @@ function populate() {
   for (var name in display) {
     display[name] = document.getElementById('realminfo-' + name)
     display[name].loading = document.createElement('div')
-    display[name].loading.textContent = "Loading ..."
+    display[name].loading.className = "realminfo-loading"
+    display[name].loading.textContent = "Retrieving realm info..."
     display[name].append(display[name].loading)
   }
 }
