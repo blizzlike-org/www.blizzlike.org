@@ -107,6 +107,7 @@ function createRealm(data, name) {
 function updateRealmInfo(parent, data) {
   /* clear loading screen */
   parent.loading.textContent = ""
+  parent.loading.className = ""
 
   /* create realm element */
   if (typeof parent[data.id] == "undefined") {
