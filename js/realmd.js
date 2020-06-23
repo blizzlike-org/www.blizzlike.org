@@ -152,13 +152,13 @@ window.setInterval(function() {
     const data = request.response
     for (let i = 0; i < data.length; i++) {
       /* update overview */
-      if (data[i].timezone != 26) {
+      if (data[i].timezone != 26 && data[i].timezone != 0) {
         updateRealmInfo(display.overview, data[i])
       }
 
       /* update vanilla section */
       if (data[i].realmbuilds.search("5875") != -1) {
-        if (data[i].timezone == 26) {
+        if (data[i].timezone == 26 || data[i].timezone == 0) {
           updateRealmInfo(display.vanillaptr, data[i])
         } else {
           updateRealmInfo(display.vanilla, data[i])
@@ -167,7 +167,7 @@ window.setInterval(function() {
 
       /* update tbc section */
       if (data[i].realmbuilds.search("8606") != -1) {
-        if (data[i].timezone == 26) {
+        if (data[i].timezone == 26 || data[i].timezone == 0) {
           updateRealmInfo(display.tbcptr, data[i])
         } else {
           updateRealmInfo(display.tbc, data[i])
@@ -176,7 +176,7 @@ window.setInterval(function() {
 
       /* update wotlk section */
       if (data[i].realmbuilds.search("12340") != -1) {
-        if (data[i].timezone == 26) {
+        if (data[i].timezone == 26 || data[i].timezone == 0) {
           updateRealmInfo(display.wotlkptr, data[i])
         } else {
           updateRealmInfo(display.wotlk, data[i])
